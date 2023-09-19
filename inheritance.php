@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    // Lớp con sẽ kế thừa tất cả các thuộc tính và phương thức public và protected từ lớp cha. 
+    // Ngoài ra, nó có thể có các thuộc tính và phương thức riêng.
     <?php
         class FruitInheritance{
             public $name;
@@ -20,12 +22,19 @@
             }
         }
         class Strawberry extends FruitInheritance{
-            public function messeage(){
-                echo "Am I a fruit or a berry?";
+            public $weight;
+            function __construct($name, $color, $weight,)
+            {
+                $this->name = $name;
+                $this->color = $color;
+                $this->weight = $weight;
+            }
+            public function intro()
+            {
+                echo "The fruit is {$this->name} and the color is {$this->color}, and the weight is {$this->weight} gram.";
             }
         }
-        $strawberry = new Strawberry("Apple", "red");
-        $strawberry->messeage();
+        $strawberry = new Strawberry("Apple", "red", "500");
         $strawberry->intro();
     ?>
 </body>
